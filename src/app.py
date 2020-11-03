@@ -35,15 +35,8 @@ def handle_hello():
     }
     return jsonify(members), 200
 
-@app.route('/members', methods=['GET'])
-def handle_hello():
-    # this is how you can use the Family datastructure by calling its methods
-    members = jackson_family.get_all_members()
-    response_body = {
-        "hello": "world",
-        "family": members
-    }
-    return jsonify(members), 200
+@app.route('/member', methods=['POST'])
+
 
 
 # this only runs if `$ python src/app.py` is executed
