@@ -38,6 +38,8 @@ def handle_hello():
 @app.route('/member', methods=['POST'])
 def post_member():
     jackson_family.add_member(request.json)
+    members = jackson_family.get_all_members()
+    return jsonify(members), 200
 
 
 # this only runs if `$ python src/app.py` is executed
